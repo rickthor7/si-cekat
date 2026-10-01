@@ -1,0 +1,240 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-cyan: var(--cyan);
+  --color-cyan-foreground: var(--cyan-foreground);
+  --color-eco: var(--eco);
+  --color-eco-foreground: var(--eco-foreground);
+  --color-energy: var(--energy);
+  --color-energy-foreground: var(--energy-foreground);
+  --color-warning: var(--warning);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --font-sans: var(--font-family-sans);
+}
+
+:root {
+  --radius: 0.75rem;
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", system-ui, sans-serif;
+
+  /* Light mode */
+  --background: oklch(0.97 0.005 250);
+  --foreground: oklch(0.18 0.02 256);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 256);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 256);
+  --primary: oklch(0.55 0.18 195);
+  --primary-foreground: oklch(0.98 0.005 250);
+  --secondary: oklch(0.93 0.008 250);
+  --secondary-foreground: oklch(0.25 0.02 256);
+  --muted: oklch(0.93 0.008 250);
+  --muted-foreground: oklch(0.45 0.02 250);
+  --accent: oklch(0.93 0.008 250);
+  --accent-foreground: oklch(0.18 0.02 256);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.98 0.005 250);
+  --border: oklch(0.88 0.01 250);
+  --input: oklch(0.88 0.01 250);
+  --ring: oklch(0.55 0.18 195);
+
+  --cyan: oklch(0.55 0.18 195);
+  --cyan-foreground: oklch(0.98 0.005 250);
+  --eco: oklch(0.5 0.17 155);
+  --eco-foreground: oklch(0.98 0.005 250);
+  --energy: oklch(0.6 0.17 85);
+  --energy-foreground: oklch(0.15 0.014 256);
+  --warning: oklch(0.6 0.18 55);
+  --surface: oklch(0.95 0.005 250);
+  --surface-foreground: oklch(0.18 0.02 256);
+
+  --chart-1: oklch(0.55 0.18 195);
+  --chart-2: oklch(0.5 0.17 155);
+  --chart-3: oklch(0.6 0.17 85);
+  --chart-4: oklch(0.6 0.18 55);
+  --chart-5: oklch(0.5 0.2 300);
+  --sidebar: oklch(0.97 0.005 250);
+  --sidebar-foreground: oklch(0.18 0.02 256);
+  --sidebar-primary: oklch(0.55 0.18 195);
+  --sidebar-primary-foreground: oklch(0.98 0.005 250);
+  --sidebar-accent: oklch(0.93 0.008 250);
+  --sidebar-accent-foreground: oklch(0.18 0.02 256);
+  --sidebar-border: oklch(0.88 0.01 250);
+  --sidebar-ring: oklch(0.55 0.18 195);
+}
+
+.dark {
+  --background: oklch(0.145 0.014 256);
+  --foreground: oklch(0.95 0.006 250);
+  --card: oklch(0.2 0.016 256);
+  --card-foreground: oklch(0.95 0.006 250);
+  --popover: oklch(0.2 0.016 256);
+  --popover-foreground: oklch(0.95 0.006 250);
+  --primary: oklch(0.78 0.15 195);
+  --primary-foreground: oklch(0.15 0.014 256);
+  --secondary: oklch(0.28 0.016 256);
+  --secondary-foreground: oklch(0.85 0.01 250);
+  --muted: oklch(0.25 0.014 256);
+  --muted-foreground: oklch(0.6 0.02 250);
+  --accent: oklch(0.28 0.016 256);
+  --accent-foreground: oklch(0.95 0.006 250);
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: oklch(0.95 0.006 250);
+  --border: oklch(0.3 0.016 256);
+  --input: oklch(0.3 0.016 256);
+  --ring: oklch(0.78 0.15 195);
+
+  /* IoT accent colors */
+  --cyan: oklch(0.78 0.15 195);
+  --cyan-foreground: oklch(0.15 0.014 256);
+  --eco: oklch(0.72 0.19 155);
+  --eco-foreground: oklch(0.15 0.014 256);
+  --energy: oklch(0.82 0.17 85);
+  --energy-foreground: oklch(0.15 0.014 256);
+  --warning: oklch(0.75 0.18 55);
+  --surface: oklch(0.18 0.014 256);
+  --surface-foreground: oklch(0.95 0.006 250);
+
+  --chart-1: oklch(0.78 0.15 195);
+  --chart-2: oklch(0.72 0.19 155);
+  --chart-3: oklch(0.82 0.17 85);
+  --chart-4: oklch(0.75 0.18 55);
+  --chart-5: oklch(0.65 0.2 300);
+  --sidebar: oklch(0.17 0.014 256);
+  --sidebar-foreground: oklch(0.95 0.006 250);
+  --sidebar-primary: oklch(0.78 0.15 195);
+  --sidebar-primary-foreground: oklch(0.15 0.014 256);
+  --sidebar-accent: oklch(0.28 0.016 256);
+  --sidebar-accent-foreground: oklch(0.95 0.006 250);
+  --sidebar-border: oklch(0.3 0.016 256);
+  --sidebar-ring: oklch(0.78 0.15 195);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .glow-cyan {
+    box-shadow: 0 0 20px -5px oklch(0.78 0.15 195 / 0.3);
+  }
+  .glow-eco {
+    box-shadow: 0 0 20px -5px oklch(0.72 0.19 155 / 0.3);
+  }
+  .glow-energy {
+    box-shadow: 0 0 20px -5px oklch(0.82 0.17 85 / 0.3);
+  }
+  .card-iot {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+  }
+  .card-iot:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 30px -10px oklch(0.78 0.15 195 / 0.2);
+    transform: translateY(-2px);
+  }
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .gradient-text-cyan {
+    background: linear-gradient(135deg, oklch(0.78 0.15 195), oklch(0.72 0.19 155));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Leaflet dark-theme tweaks */
+.leaflet-container {
+  background: oklch(0.16 0.014 256) !important;
+  font-family: inherit;
+}
+.leaflet-control-attribution {
+  background: oklch(0.18 0.014 256 / 0.7) !important;
+  color: oklch(0.6 0.02 250) !important;
+  font-size: 9px !important;
+}
+.leaflet-control-attribution a { color: oklch(0.78 0.15 195) !important; }
+.leaflet-control-zoom a {
+  background: oklch(0.2 0.014 256) !important;
+  color: oklch(0.95 0.02 250) !important;
+  border-color: oklch(0.3 0.014 256) !important;
+}
+.leaflet-control-zoom a:hover {
+  background: oklch(0.25 0.014 256) !important;
+}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: oklch(0.18 0.014 256) !important;
+  color: oklch(0.95 0.02 250) !important;
+}
+.leaflet-tooltip {
+  background: oklch(0.18 0.014 256) !important;
+  color: oklch(0.78 0.15 195) !important;
+  border: 1px solid oklch(0.78 0.15 195 / 0.4) !important;
+  font-size: 10px !important;
+}
+.vessel-boat-icon { background: transparent !important; border: none !important; }
+.vessel-dock-icon { background: transparent !important; border: none !important; }
